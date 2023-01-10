@@ -1,0 +1,30 @@
+.show-card > img{
+  height: 200px;
+  width: 100%;
+  margin-top: 20px;
+  object-fit: cover;
+  display: flex;
+}
+
+.show-card{
+  width: 1250px;
+  height: auto;
+  text-align: center;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-top: 15px;
+  padding-top: auto;
+  display: flex;
+  align-items: center;
+
+}
+
+.card-infos{
+  padding: 20px;
+}
+
+.recipe-title{
+  font-size: 50px;
+  font-weight: bold;
+}

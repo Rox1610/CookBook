@@ -2,7 +2,11 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: %i[show update]
 
   def index
-    @recipes = Recipe.all
+    if params[:query].present?
+      @recipes = Recipe.search_by_title_description_and_ingredients(params[:query])
+    else
+      @recipes = Recipe.all
+    end
   end
 
   def show
@@ -16,7 +20,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     @recipe.user = current_user
     if @recipe.save
-      redirect_to recipe_path(@recipe)
+      redirect_to recipes_path
     else
       render :new, status: :unprocessable_entity
     end
