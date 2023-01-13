@@ -24,7 +24,22 @@
   padding: 20px;
 }
 
-.recipe-title{
-  font-size: 50px;
-  font-weight: bold;
+.about-card{
+  overflow: hidden;
+  height: 540px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.about-card img {
+  height: 445px;
+  width: auto;
+  object-position: center;
+}
+
+.about-card-infos{
+  margin-top: 35px;
+  margin-right: 60px;
 }
