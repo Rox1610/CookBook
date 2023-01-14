@@ -1,0 +1,31 @@
+<div class="recipes-container m-4">
+  <h1>Recettes 🍽️</h1>
+  <p>Recherche une recette ou un ingrédient.</p>
+  <div class="mt-2">
+    <%= form_with url: recipes_path, method: :get, class: "d-flex my-3 w-50" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Trouve une recette" %>
+      <%= button_tag type: 'submit', class: "button-search" do %>
+        <i class="fa-solid fa-magnifying-glass"></i>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<%# section to be updated based on category selected %>
+  <div class="container-recipe row row-cols-1 row-cols-md-3 g-4 mb-5">
+    <% @recipes.each do |recipe| %>
+        <div class="card-index-infos">
+          <div>
+            <ul>
+              <li><%= link_to recipe_path(recipe), class:"text-decoration-none" do %>
+                <h2><%= recipe.title %></h2>
+              </li>
+            </ul>
+            <% end %>
+          </div>
+        </div>
+    <% end %>
+  </div>

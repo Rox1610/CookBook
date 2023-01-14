@@ -2,6 +2,9 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: %i[show update]
 
   def index
+  end
+
+  def category
     if params[:query].present?
       @recipes = Recipe.search_by_title_description_and_ingredients(params[:query])
     else

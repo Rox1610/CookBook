@@ -2,6 +2,7 @@ class Recipe < ApplicationRecord
   has_rich_text :rich_body
   has_one_attached :photo
   belongs_to :user
+  belongs_to :category
 
   include PgSearch::Model
 
