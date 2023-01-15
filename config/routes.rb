@@ -4,5 +4,9 @@ Rails.application.routes.draw do
 
   get '/about', to: 'pages#about', as: 'about'
 
-  resources :recipes
+  resources :categories, only: %i[index] do
+    resources :recipes, only: %i[index]
+  end
+
+  resources :recipes, only: %i[show new create destroy]
 end

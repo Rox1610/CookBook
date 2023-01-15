@@ -1,0 +1,18 @@
+<div class="recipes-container m-4">
+  <h1>Recettes 🍽️</h1>
+  <p>Sélectionne une catégorie.</p>
+
+  <div class="cards mt-3">
+    <% @categories.each do |category| %>
+        <div class="card-index-infos">
+          <div>
+            <%= link_to category_recipes_path(category), class:"text-decoration-none" do %>
+              <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= category.photo %>)">
+                <h2><%= category.name%></h2>
+              </div>
+            <% end %>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>
