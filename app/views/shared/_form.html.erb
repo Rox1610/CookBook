@@ -1,14 +1,10 @@
-<%= simple_form_for(@recipe) do |f| %>
+<%= simple_form_for [@category, @recipe] do |f| %>
 
-  <div class="form-inputs" style="float:left; width:500px;">
+  <div class="form-inputs">
     <%= f.input :title, :label => 'Titre de la recette', required: true %>
   </div>
 
-  <div class="form-inputs" style="float:right; width:500px;">
-    <%= f.input :category, :label => 'Catégorie de la recette', required: true, :collection => %w[Déjeuner Entrée/Soupe Lunch Souper Dessert Divers] %>
-  </div>
-
-  <div class="form-inputs" style="clear:both;">
+  <div class="form-inputs">
     <%= f.input :ingredients, :label => 'Ingrédients', required: true %>
   </div>
 

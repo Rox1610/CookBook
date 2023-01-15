@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: %i[show update]
+  before_action :set_category, only: %i[new create]
 
   def show
   end
@@ -11,8 +12,9 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.user = current_user
+    @recipe.category = @category
     if @recipe.save
-      redirect_to recipes_path
+      redirect_to categories_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -31,5 +33,9 @@ class RecipesController < ApplicationController
 
   def recipe_params
     params.require(:recipe).permit(:title, :rich_body, :ingredients, :photo)
+  end
+
+  def set_category
+    @category = Category.find(params[:category_id])
   end
 end

@@ -1,12 +1,11 @@
-.show-card > img{
+.recipe-show-card > img{
   height: 200px;
   width: 100%;
   margin-top: 20px;
   object-fit: cover;
-  display: flex;
 }
 
-.show-card{
+.recipe-show-card{
   width: 1250px;
   height: auto;
   text-align: center;
@@ -19,13 +18,13 @@
   align-items: center;
 }
 
-.show-card:hover{
-  box-shadow: 0 0 15px rgba(0,0,0,0.6);
-  transform: scale(0.9, 0.9);
+.recipe-view-card{
+  width: 625px;
 }
 
-.card-infos{
+.recipe-infos-card{
   padding: 20px;
+  width: 625px;
 }
 
 .about-card{
@@ -67,6 +66,11 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-category:hover{
+  box-shadow: 0 0 15px rgba(0,0,0,0.6);
+  transform: scale(0.9, 0.9);
 }
 
 // Smallest device

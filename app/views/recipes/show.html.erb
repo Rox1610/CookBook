@@ -1,12 +1,12 @@
 <div class="container-show-recipe d-flex justify-content-center">
-  <div class="show-card">
-    <div>
+  <div class="recipe-show-card">
+    <div class="recipe-view-card">
       <h2 class="mt-2 recipe-title"><%= @recipe.title %></h2>
       <%= cl_image_tag @recipe.photo.key %>
       <p class="py-3 px-5"> <u>Ingredients</u>: <i><%= @recipe.ingredients %></p></i>
     </div>
-    <div class="card-infos">
-      <p class="px-3"> <u>Description</u>: <%= @recipe.rich_body %></p>
+    <div class="recipe-infos-card">
+      <p class="px-3"> <u>Description</u>: <%= @recipe.description %></p>
     </div>
   </div>
 </div>

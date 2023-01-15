@@ -1,5 +1,9 @@
 <div class="container m-5">
   <h1>Recettes - <%= @category.name %></h1>
+  <%= link_to new_category_recipe_path(@category), class:"text-decoration-none" do %>
+    <h2>Ajoute une recette</h2>
+  <% end  %>
+
   <% @recipes.each do |recipe| %>
     <%= link_to recipe_path(recipe), class:"text-decoration-none" do %>
       <ul>
