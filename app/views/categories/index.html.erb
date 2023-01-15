@@ -2,17 +2,37 @@
   <h1>Recettes 🍽️</h1>
   <p>Sélectionne une catégorie.</p>
 
-  <div class="cards mt-3">
-    <% @categories.each do |category| %>
-        <div class="card-index-infos">
-          <div>
-            <%= link_to category_recipes_path(category), class:"text-decoration-none" do %>
-              <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= category.photo %>)">
-                <h2><%= category.name%></h2>
+    <div class="mt-2">
+      <%= form_with url: categories_path, method: :get, class: "d-flex mt-3 mb-4 w-50" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Trouve une recette" %>
+        <%= button_tag type: 'submit', class: "button-search" do %>
+          <i class="fa-solid fa-magnifying-glass"></i>
+        <% end %>
+      <% end %>
+    </div>
+
+    <% if params[:query].present? %>
+      <% @recipes.each do |recipe| %>
+        <%= link_to recipe_path(recipe), class:"text-decoration-none" do %>
+          <h2><%= recipe.title%></h2>
+        <% end  %>
+      <% end  %>
+    <% else %>
+      <div class="cards mt-3">
+        <% @categories.each do |category| %>
+            <div class="card-index-infos">
+              <div>
+                <%= link_to category_path(category), class:"text-decoration-none" do %>
+                  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= category.photo %>)">
+                    <h2><%= category.name%></h2>
+                  </div>
+                <% end %>
               </div>
-            <% end %>
-          </div>
-        </div>
+            </div>
+        <% end %>
+      </div>
     <% end %>
-  </div>
 </div>

@@ -1,0 +1,10 @@
+<div class="container m-5">
+  <h1>Recettes - <%= @category.name %></h1>
+  <% @recipes.each do |recipe| %>
+    <%= link_to recipe_path(recipe), class:"text-decoration-none" do %>
+      <ul>
+      <li class="fs-2"><%= recipe.title%></li>
+      </ul>
+    <% end  %>
+  <% end  %>
+</div>

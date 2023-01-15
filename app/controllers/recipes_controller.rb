@@ -1,13 +1,7 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: %i[update]
+  before_action :set_recipe, only: %i[show update]
 
-  def index
-    if params[:query].present?
-      @recipes = Recipe.search_by_title_description_and_ingredients(params[:query])
-    else
-      @category = Category.find(params[:category_id])
-      @recipes = @category.recipes
-    end
+  def show
   end
 
   def new
