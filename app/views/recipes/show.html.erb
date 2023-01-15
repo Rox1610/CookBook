@@ -6,7 +6,7 @@
       <p class="py-3 px-5"> <u>Ingredients</u>: <i><%= @recipe.ingredients %></p></i>
     </div>
     <div class="recipe-infos-card">
-      <p class="px-3"> <u>Description</u>: <%= @recipe.description %></p>
+      <p class="px-3"> <u>Description</u>: <%= @recipe.rich_body.present? ? @recipe.rich_body : @recipe.description%></p>
     </div>
   </div>
 </div>
