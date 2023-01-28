@@ -7,3 +7,13 @@
 .recipe-content{
   display: flex;
 }
+
+
+.back-button a:link, .back-button a:visited, .back-button a:hover, .back-button a:active  {
+    text-decoration:none;
+    color: black;
+  }
+
+.back-button {
+  border-color: rgb(221, 221, 221);
+}

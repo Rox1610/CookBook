@@ -8,6 +8,9 @@
       </div>
       <div class="recipe-infos-card">
         <p class="px-3"> <u>Description</u>: <%= @recipe.rich_body.present? ? @recipe.rich_body : @recipe.description%></p>
+        <div class="back-button btn btn-light">
+          <%= link_to 'Back', :back %>
+        </div>
       </div>
     </div>
   </div>
