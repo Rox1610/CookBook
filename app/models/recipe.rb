@@ -4,6 +4,9 @@ class Recipe < ApplicationRecord
   belongs_to :user
   belongs_to :category
 
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
   include PgSearch::Model
 
   pg_search_scope :search_by_title_description_and_ingredients,
