@@ -2,15 +2,16 @@
   <div class="d-flex">
     <h1 class="flex-grow-1">Recettes - <%= @category.name %></h1>
     <%= link_to new_category_recipe_path(@category) do %>
-      <div class=" text-muted"><i class="fa-regular fa-square-plus"></i> Ajouter</div>
+      <div class="text-muted"><i class="fa-regular fa-square-plus"></i> Ajouter</div>
     <% end %>
   </div>
 
-  <% @recipes.each do |recipe| %>
-    <%= link_to recipe_path(recipe), class:"text-decoration-none" do %>
-      <ul>
-      <li class="fs-2"><%= recipe.title%></li>
-      </ul>
-    <% end  %>
+  <% @recipes.sort.each do |recipe| %>
+    <div class="list-group-item list-group-item-action">
+      <%= link_to recipe_path(recipe), class:"text-decoration-none" do %>
+        <h4><%= recipe.title%></h4>
+      <% end  %>
+    </div>
   <% end  %>
+
 </div>

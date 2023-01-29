@@ -6,9 +6,9 @@
         <%= cl_image_tag @recipe.photo.key %>
         <p class="py-3 px-5"> <u>Ingredients</u>: <i><%= @recipe.ingredients %></p></i>
       </div>
-      <div class="recipe-infos-card">
+      <div class="recipe-infos-card d-flex flex-column">
         <p class="px-3"> <u>Description</u>: <%= @recipe.rich_body.present? ? @recipe.rich_body : @recipe.description%></p>
-        <div class="back-button btn btn-light">
+        <div class="back-button btn btn-light align-self-end">
           <%= link_to 'Back', :back %>
         </div>
       </div>
