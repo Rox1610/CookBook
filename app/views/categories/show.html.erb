@@ -1,8 +1,11 @@
 <div class="container m-5">
-  <div class="d-flex">
-    <h1 class="flex-grow-1">Recettes - <%= @category.name %></h1>
+  <div>
+    <div class="card-cat-show-recipe" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @category.photo %>)">
+      Recettes - <%= @category.name %></h1>
+    </div>
+
     <%= link_to new_category_recipe_path(@category) do %>
-      <div class="text-muted"><i class="fa-regular fa-square-plus"></i> Ajouter</div>
+      <div class="text-muted mt-2 mb-3"><i class="fa-regular fa-square-plus"></i> Ajouter</div>
     <% end %>
   </div>
 
