@@ -1,0 +1,5 @@
+meta_name: "CookBook"
+meta_title: "CookBook - Partage tes meilleures recettes"
+meta_description: "Une application pour partager des recettes facilement."
+meta_image: "cover.png"
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
